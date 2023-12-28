@@ -1,4 +1,4 @@
-# Exp-6-Synchornous-counters - up counter and down counter 
+# Ex - 6 Implementation of 4 bit synchronous counters using verilog HDL.
 ### AIM: To implement 4 bit up and down counters and validate  functionality.
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
 ### SOFTWARE REQUIRED:   Quartus prime
@@ -60,8 +60,8 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 ### PROGRAM 
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: v.sanjay
-RegisterNumber: 23012749
+Developed by: Baudhigan D
+RegisterNumber: 23012654
 
 ## UPCOUNTER:
 module up(clk,A);
