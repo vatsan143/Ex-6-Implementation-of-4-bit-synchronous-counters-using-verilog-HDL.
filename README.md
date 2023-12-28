@@ -46,23 +46,63 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+1.Create module projectname(input ,output) to start the verilog programming.
+
+2.create a if loop condition to increase the count in counter_up function.
+
+3.Similarly, create another loop for the down counter.
+
+4.End the verilog program using keyword endmodule.
+
+5.Get the timing diagram and RTL realization diagram for respective Counters.
 
 
 
 ### PROGRAM 
-/*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: v.sanjay
+RegisterNumber: 23012749
+
+## UPCOUNTER:
+module up(clk,A);
+input clk;
+output reg[0:3]A;
+always@(posedge clk)
+begin
+		A[0]=((((A[1])&(A[2]))&A[3])^A[0]);
+		A[1]=(((A[2])&(A[3]))^A[1]);
+		A[2]=((A[3])^A[2]);
+		A[3]=1^A[3];
+end
+endmodule
 
 
+## DOWNCOUNTER:
+module downc(clk,A);
+input clk;
+output reg[0:3]A;
+always@(posedge clk)
+begin
+		A[0]=((((~A[1])&(~A[2]))&(~A[3]))^A[0]);
+		A[1]=(((~A[2])&(~A[3]))^A[1]);
+		A[2]=((~A[3])^A[2]);
+		A[3]=1^A[3];
+end
+endmodule
 
 
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+## UP COUNTER:
+![image](https://github.com/sanjayy2431/Exp-7-Synchornous-counters-/assets/149365143/ee3cf159-7141-443d-87f3-d39f7f64fd9c)
+
+
+## DOWN COUNTER:
+![image](https://github.com/sanjayy2431/Exp-7-Synchornous-counters-/assets/149365143/f2184711-af1a-491d-83bf-441b85feb863)
+
+
+
 
 
 
@@ -73,6 +113,13 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS FOR COUNTER  
+## UP COUNTER:
+
+#![image](https://github.com/sanjayy2431/Exp-7-Synchornous-counters-/assets/149365143/69820704-e8a2-4f9d-9753-173037609cc6)
+
+## DOWN COUNTER:
+
+![image](https://github.com/sanjayy2431/Exp-7-Synchornous-counters-/assets/149365143/cec40c1a-1670-4ef8-ace4-72b911224971)
 
 
 
@@ -80,9 +127,15 @@ RegisterNumber:
 
 ### TRUTH TABLE 
 
+## UP COUNTER:
+![image](https://github.com/sanjayy2431/Exp-7-Synchornous-counters-/assets/149365143/9061b16e-f9e1-4fb3-988c-20a8c31b7400)
+
+## DOWN COUNTER:
+![image](https://github.com/sanjayy2431/Exp-7-Synchornous-counters-/assets/149365143/2d712296-1862-42f2-b0d0-d099a6c92c7b)
 
 
 
 
 
-### RESULTS 
+### RESULTS:
+This experiment synchronous counter runned successfully.
